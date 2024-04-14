@@ -80,10 +80,10 @@ struct EditorConfig {
 	COORD	cursor;		// Current cursor position.
 	COORD	rcursor;	// Render cursor position.
 	COORD	offset;		// Editor offset.
-	int		rx;			// Render X position.
+	int	rx;		// Render X position.
 	line_t	*line;		// Text lines.
 	size_t	linesnum;	// Number of lines.
-	int		dirty;
+	int	dirty;
 	char	*filename;
 	char	statusmsg[80];
 	time_t	statusmsg_time;
@@ -1260,7 +1260,7 @@ void ExitEditorConsole(void)
 	// Reset console settings.
 	if (E.hStdout != INVALID_HANDLE_VALUE && E.dwOutMode)
 	{
-		printf("\x1b[!p");		// Reset console settings.
+		printf("\x1b[!p");	// Reset console settings.
 		printf("\x1b[?1049l");	// Switch back to the main buffer.
 		SetConsoleMode(E.hStdout, E.dwOutMode);
 	}
